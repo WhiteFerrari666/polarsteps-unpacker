@@ -1,5 +1,8 @@
 *.iml
 .idea
 *.js
+*.js.map
+package-lock.json
 target
 your_files_here
+node_modules
