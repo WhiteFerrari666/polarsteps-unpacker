@@ -14,7 +14,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsc",
-    "start": "node dist/app/Starter.js"
+    "start": "node --experimental-specifier-resolution=node dist/app/Starter.js"
   },
   "dependencies": {
     "docx": "^7.6.0"

@@ -1,4 +1,4 @@
-import {UserParser} from "../user/UserParser.js";
+import {UserParser} from "../user/UserParser";
 import fs from "fs";
 import path from "path";
 

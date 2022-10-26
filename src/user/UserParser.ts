@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs";
 import User from "./User";
 import docx from "docx";
-import {externalFileDir, resultDir, resultFilename} from "../app/Constants.js";
+import {externalFileDir, resultDir, resultFilename} from "../app/Constants";
 
 const {Document, Packer, Paragraph, TextRun} = docx;
 const userJsonPath: string = path.resolve(externalFileDir + "/user/user.json");
