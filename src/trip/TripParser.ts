@@ -1,4 +1,4 @@
-import docx from "docx";
+import docx, {Paragraph} from "docx";
 import path from "path";
 import {externalFileDir, resultFilenameTrip, version} from "../app/Constants";
 import fs from "fs";
@@ -30,6 +30,11 @@ export class TripParser {
             sections: [{
                 properties: {},
                 children: docParagraphs,
+                headers: {
+                    default: new docx.Header({
+                        children: [new docx.Paragraph("Polarsteps Unpacker v" + version)],
+                    }),
+                }
             }]
         });
 
@@ -39,21 +44,21 @@ export class TripParser {
 private buildTripSectionForStep(step: Step) :docx.Paragraph {
     let paragraph = new docx.Paragraph({});
     paragraph.addChildElement(this.getDateRun(step));
-    this.addSpacing(paragraph);
+    this.addSpacing(paragraph, 1);
 
     paragraph.addChildElement(this.getLocationRun(step));
-    this.addSpacing(paragraph);
+    this.addSpacing(paragraph, 1);
 
     paragraph.addChildElement(this.getWeatherRun(step));
-    this.addSpacing(paragraph);
+    this.addSpacing(paragraph, 2);
 
     paragraph.addChildElement(this.getDescriptionRun(step));
-    this.addSpacing(paragraph);
+    this.addSpacing(paragraph, 2);
     return paragraph;
     }
 
-    private addSpacing(paragraph: docx.Paragraph) {
-        paragraph.addChildElement(new docx.TextRun({break: 2}))
+    private addSpacing(paragraph: Paragraph, spacings: number) {
+        paragraph.addChildElement(new docx.TextRun({break: spacings}))
     }
 
     private getDateRun(step: Step) :docx.TextRun {
