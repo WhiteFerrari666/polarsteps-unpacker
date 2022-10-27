@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs";
 import {User} from "./User";
 import docx from "docx";
-import {externalFileDir, resultFilenameUser} from "../app/Constants";
+import {externalFileDir, resultFilenameUser} from "../app/TechnicalConstants";
 import {printDocumentToResultDir} from "../print/DocPrinter";
 
 const {Document, Packer, Paragraph, TextRun} = docx;

@@ -1,5 +1,5 @@
 import {TripParser} from "../trip/TripParser";
-import {version} from "./Constants";
+import {version} from "./TechnicalConstants";
 
 class App {
 

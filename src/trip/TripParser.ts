@@ -1,14 +1,12 @@
 import docx, {Paragraph} from "docx";
 import path from "path";
-import {externalFileDir, resultFilenameTrip, version} from "../app/Constants";
+import {externalFileDir, resultFilenameTrip, version} from "../app/TechnicalConstants";
 import fs from "fs";
 import {Step, Trip} from "./Trip";
 import {printDocumentToResultDir} from "../print/DocPrinter";
 
 const tripJsonPath: string = path.resolve(externalFileDir +
     "/trip/Radtour zu den Lofoten_4936737/trip.json");
-const fontSizeHeading :number = 22;
-const fontSizeContent :number = 18;
 
 export class TripParser {
 
@@ -66,7 +64,7 @@ private buildTripSectionForStep(step: Step) :docx.Paragraph {
             text: "Datum: " + this.convertToDateString(step.start_time),
             bold: true,
             size: fontSizeHeading,
-            font: "Verdana"
+            font: fontType
         });
     }
 
@@ -75,7 +73,7 @@ private buildTripSectionForStep(step: Step) :docx.Paragraph {
             text: "Ort: " + step.location.name,
             bold: true,
             size: fontSizeHeading,
-            font: "Verdana"
+            font: fontType
         });
     }
 
@@ -84,7 +82,7 @@ private buildTripSectionForStep(step: Step) :docx.Paragraph {
             text: "Wetterbedingungen: " + step.weather_condition,
             bold: true,
             size: fontSizeHeading,
-            font: "Verdana"
+            font: fontType
         });
     }
 
@@ -93,11 +91,12 @@ private buildTripSectionForStep(step: Step) :docx.Paragraph {
             text: step.description,
             bold: false,
             size: fontSizeContent,
-            font: "Verdana"
+            font: fontType
         });
     }
 
     private convertToDateString(seconds: number) :string {
+        // Datum kommt als UNIX-Timestamp
         let secondsRounded = Math.round(seconds);
         let date = new Date(secondsRounded * 1000);
         return date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
