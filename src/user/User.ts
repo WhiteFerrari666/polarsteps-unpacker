@@ -1,9 +1,7 @@
-interface User {
-    "id": string,
-    "username": string,
-    "first_name": string,
-    "last_name": string,
-    "living_location_name": string
+export interface User {
+    id: string,
+    username: string,
+    first_name: string,
+    last_name: string,
+    living_location_name: string
 }
-
-export default User;

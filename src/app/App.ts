@@ -1,6 +1,7 @@
 import {UserParser} from "../user/UserParser";
 import fs from "fs";
 import path from "path";
+import {TripParser} from "../trip/TripParser";
 
 class App {
 
@@ -14,8 +15,11 @@ class App {
 }
 
 function createDocument() {
-    console.log("Reading User data...")
-    new UserParser().printUserInfo();
+    // console.log("Checking user data...")
+    // new UserParser().printUserInfo();
+
+    console.log("Checking trip data...")
+    new TripParser().printTripInfo();
 }
 
 export default App;
