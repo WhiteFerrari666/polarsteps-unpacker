@@ -1,12 +1,9 @@
-import {UserParser} from "../user/UserParser";
-import fs from "fs";
-import path from "path";
 import {TripParser} from "../trip/TripParser";
+import {version} from "./Constants";
 
 class App {
 
     public doWork() {
-        let version = JSON.parse(fs.readFileSync(path.resolve("./") + "/package.json", 'utf-8')).version;
         console.log("Polarsteps Unpacker v" + version);
         console.log("Hello World!");
 
