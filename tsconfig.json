@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
     "module": "es6",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "target": "es6",
-    "moduleResolution": "node",
+    "target": "es5",
     "sourceMap": true,
-    "outDir": "dist",
-    "noEmit": false
-  },
-  "lib": [
-    "es2016"
-  ],
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "src/**/*.spec.ts"]
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports" : true,
+    "esModuleInterop" : true
+  }
 }

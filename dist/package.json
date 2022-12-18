@@ -1,0 +1,18 @@
+{
+  "name": "polarsteps-unpacker-app",
+  "version": "0.0.1",
+  "description": "A demo app to show how NW.js works",
+  "main": "index.html",
+  "window": {
+    "icon": "assets/icon.png",
+    "height": 600,
+    "width": 500,
+    "resizable": true,
+    "title": "Polarsteps Unpacker v0.0.1"
+  },
+  "dependencies": {
+    "docx": "^7.6.0",
+    "bootstrap": "^4.6.2",
+    "jquery": "^3.6.1"
+  }
+}

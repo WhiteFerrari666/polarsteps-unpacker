@@ -1,5 +1,5 @@
-import {TripParser} from "../trip/TripParser";
-import {version} from "./TechnicalConstants";
+import {TripParser} from "../trip/TripParser.js";
+import {version} from "./TechnicalConstants.js";
 
 class App {
 
@@ -11,7 +11,7 @@ class App {
     }
 }
 
-function createDocument() {
+export function createDocument() {
     // console.log("Checking user data...")
     // new UserParser().printUserInfo();
 

@@ -3,7 +3,8 @@ import fs from "fs";
 import {User} from "./User";
 import docx from "docx";
 import {externalFileDir, resultFilenameUser} from "../app/TechnicalConstants";
-import {printDocumentToResultDir} from "../print/DocPrinter";
+import {printDocumentToResultDir} from "../print/DocPrinter.js";
+
 
 const {Document, Packer, Paragraph, TextRun} = docx;
 const userJsonPath: string = path.resolve(externalFileDir + "/trip/Radtour zu den Lofoten_4936747/trip.json");
