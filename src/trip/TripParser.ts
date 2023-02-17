@@ -1,12 +1,19 @@
 import docx, {Paragraph} from "docx";
 import path from "path";
 import {externalFileDir, resultFilenameTrip, version} from "../app/TechnicalConstants";
+import {fontType, fontSizeHeading, fontSizeContent} from "../print/FormatConstants";
 import fs from "fs";
 import {Step, Trip} from "./Trip";
 import {printDocumentToResultDir} from "../print/DocPrinter";
 
+// Trip Lofoten
+// const tripJsonPath: string = path.resolve(externalFileDir +
+//     "/trip/Radtour zu den Lofoten_4936737/trip.json");
+
+// Trip Oman
 const tripJsonPath: string = path.resolve(externalFileDir +
-    "/trip/Radtour zu den Lofoten_4936737/trip.json");
+    "/trip/Oman Off-Road_6345833/trip.json");
+
 
 export class TripParser {
 
