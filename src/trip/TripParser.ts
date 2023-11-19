@@ -1,25 +1,19 @@
 import docx, {Paragraph} from "docx";
-import path from "path";
-import {externalFileDir, resultFilenameTrip, version} from "../app/TechnicalConstants";
+import {resultFilenameTrip, version} from "../app/TechnicalConstants";
 import {fontType, fontSizeHeading, fontSizeContent} from "../print/FormatConstants";
 import fs from "fs";
 import {Step, Trip} from "./Trip";
 import {printDocumentToResultDir} from "../print/DocPrinter";
+import {tripLofoten} from "../app/TripPaths";
 
-// Trip Lofoten
-// const tripJsonPath: string = path.resolve(externalFileDir +
-//     "/trip/Radtour zu den Lofoten_4936737/trip.json");
-
-// Trip Oman
-const tripJsonPath: string = path.resolve(externalFileDir +
-    "/trip/Oman Off-Road_6345833/trip.json");
-
+// Welcher Trip soll gedruckt werden? (Oben aus TripPaths.ts importieren)
+const tripToPrintJsonPath = tripLofoten;
 
 export class TripParser {
 
     public printTripInfo() :void {
-        console.log(tripJsonPath);
-        let tripData = JSON.parse(fs.readFileSync(tripJsonPath, 'utf-8')) as Trip;
+        console.log(tripToPrintJsonPath);
+        let tripData = JSON.parse(fs.readFileSync(tripToPrintJsonPath, 'utf-8')) as Trip;
         console.log("Found trip data for trip " + "'" + tripData.name + "'");
         console.log("Printing trip data...")
 
