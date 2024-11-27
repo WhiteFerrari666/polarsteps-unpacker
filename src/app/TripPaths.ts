@@ -16,3 +16,7 @@ export const tripIndianSummer: string = path.resolve(externalFileDir +
 // Trip La Meuse a Velo
 export const tripLaMeuseAVelo: string = path.resolve(externalFileDir +
     "/trip/La Meuse a Velo/trip.json");
+
+// Trip Coast to Coast
+export const tripCoastToCoast: string = path.resolve(externalFileDir +
+    "/trip/coast-to-coast_11586921/trip.json");
