@@ -1,4 +1,4 @@
-import {externalFileDir} from "../app/TechnicalConstants";
+import {externalFileDir} from "../app/TechnicalConstants.js";
 import path from "path";
 
 // Trip Lofoten

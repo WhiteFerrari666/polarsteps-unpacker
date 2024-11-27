@@ -1,5 +1,5 @@
 import fs from "fs";
-import {resultDir} from "../app/TechnicalConstants";
+import {resultDir} from "../app/TechnicalConstants.js";
 import docx from "docx";
 
 const {Packer} = docx;

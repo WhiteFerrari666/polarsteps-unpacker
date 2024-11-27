@@ -1,13 +1,13 @@
 import docx, {Paragraph} from "docx";
-import {resultFilenameTrip, version} from "../app/TechnicalConstants";
-import {fontType, fontSizeHeading, fontSizeContent} from "../print/FormatConstants";
+import {resultFilenameTrip, version} from "../app/TechnicalConstants.js";
+import {fontType, fontSizeHeading, fontSizeContent} from "../print/FormatConstants.js";
 import fs from "fs";
-import {Step, Trip} from "./Trip";
-import {printDocumentToResultDir} from "../print/DocPrinter";
-import {tripLofoten} from "../app/TripPaths";
+import {Step, Trip} from "./Trip.js";
+import {printDocumentToResultDir} from "../print/DocPrinter.js";
+import {tripCoastToCoast} from "../app/TripPaths.js";
 
 // Welcher Trip soll gedruckt werden? (Oben aus TripPaths.ts importieren)
-const tripToPrintJsonPath = tripLofoten;
+const tripToPrintJsonPath = tripCoastToCoast;
 
 export class TripParser {
 
@@ -48,8 +48,8 @@ private buildTripSectionForStep(step: Step) :docx.Paragraph {
     paragraph.addChildElement(this.getLocationRun(step));
     this.addSpacing(paragraph, 1);
 
-    paragraph.addChildElement(this.getWeatherRun(step));
-    this.addSpacing(paragraph, 2);
+    // paragraph.addChildElement(this.getWeatherRun(step));
+    // this.addSpacing(paragraph, 2);
 
     paragraph.addChildElement(this.getDescriptionRun(step));
     this.addSpacing(paragraph, 2);
