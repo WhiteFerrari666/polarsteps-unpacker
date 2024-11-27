@@ -17,6 +17,7 @@
     "start": "npm run build && node --experimental-specifier-resolution=node ./dist/app/Starter.js"
   },
   "dependencies": {
-    "docx": "^7.6.0"
+    "docx": "^7.6.0",
+    "@types/node": "^20.4.9"
   }
 }
