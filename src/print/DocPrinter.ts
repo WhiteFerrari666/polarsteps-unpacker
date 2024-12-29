@@ -4,13 +4,13 @@ import docx from "docx";
 
 const {Packer} = docx;
 
-function createResultDirIfNecessary() :void {
+function createResultDirIfNecessary(): void {
     if (!fs.existsSync(resultDir)) {
         fs.mkdirSync(resultDir);
     }
 }
 
-export function printDocumentToResultDir(document: docx.Document, targetFilename: string) :void {
+export function printDocumentToResultDir(document: docx.Document, targetFilename: string): void {
     console.log("Printing new document to " + resultDir + "/" + targetFilename + "...");
 
     createResultDirIfNecessary();

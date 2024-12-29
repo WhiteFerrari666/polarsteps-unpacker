@@ -10,7 +10,7 @@ const userJsonPath: string = path.resolve(externalFileDir + "/trip/Radtour zu de
 
 export class UserParser {
 
-    public printUserInfo() :void {
+    public printUserInfo(): void {
         let userData = JSON.parse(fs.readFileSync(userJsonPath, 'utf-8')) as User;
         console.log("Username is " + userData.first_name);
         console.log("User living location is " + userData.living_location_name);

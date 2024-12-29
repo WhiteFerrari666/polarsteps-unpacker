@@ -11,7 +11,7 @@ const tripToPrintJsonPath = tripCoastToCoast;
 
 export class TripParser {
 
-    public printTripInfo() :void {
+    public printTripInfo(): void {
         console.log(tripToPrintJsonPath);
         let tripData = JSON.parse(fs.readFileSync(tripToPrintJsonPath, 'utf-8')) as Trip;
         console.log("Found trip data for trip " + "'" + tripData.name + "'");
@@ -19,8 +19,8 @@ export class TripParser {
 
         let map = new Map<number, docx.Paragraph>();
         tripData.all_steps.forEach(step => {
-         let stepsFromJson = this.buildTripSectionForStep(step);
-         map.set(step.id, stepsFromJson)
+            let stepsFromJson = this.buildTripSectionForStep(step);
+            map.set(step.id, stepsFromJson)
         });
 
         let docParagraphs = Array.from(map, ([id, section]) => (section));
@@ -38,29 +38,29 @@ export class TripParser {
         });
 
         printDocumentToResultDir(doc, resultFilenameTrip);
-}
+    }
 
-private buildTripSectionForStep(step: Step) :docx.Paragraph {
-    let paragraph = new docx.Paragraph({});
-    paragraph.addChildElement(this.getDateRun(step));
-    this.addSpacing(paragraph, 1);
+    private buildTripSectionForStep(step: Step): docx.Paragraph {
+        let paragraph = new docx.Paragraph({});
+        paragraph.addChildElement(this.getDateRun(step));
+        this.addSpacing(paragraph, 1);
 
-    paragraph.addChildElement(this.getLocationRun(step));
-    this.addSpacing(paragraph, 1);
+        paragraph.addChildElement(this.getLocationRun(step));
+        this.addSpacing(paragraph, 1);
 
-    // paragraph.addChildElement(this.getWeatherRun(step));
-    // this.addSpacing(paragraph, 2);
+        // paragraph.addChildElement(this.getWeatherRun(step));
+        // this.addSpacing(paragraph, 2);
 
-    paragraph.addChildElement(this.getDescriptionRun(step));
-    this.addSpacing(paragraph, 2);
-    return paragraph;
+        paragraph.addChildElement(this.getDescriptionRun(step));
+        this.addSpacing(paragraph, 2);
+        return paragraph;
     }
 
     private addSpacing(paragraph: Paragraph, spacings: number) {
         paragraph.addChildElement(new docx.TextRun({break: spacings}))
     }
 
-    private getDateRun(step: Step) :docx.TextRun {
+    private getDateRun(step: Step): docx.TextRun {
         return new docx.TextRun({
             text: "Datum: " + this.convertToDateString(step.start_time),
             bold: true,
@@ -96,7 +96,7 @@ private buildTripSectionForStep(step: Step) :docx.Paragraph {
         });
     }
 
-    private convertToDateString(seconds: number) :string {
+    private convertToDateString(seconds: number): string {
         // Datum kommt als UNIX-Timestamp
         let secondsRounded = Math.round(seconds);
         let date = new Date(secondsRounded * 1000);
