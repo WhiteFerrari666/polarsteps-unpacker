@@ -1,5 +1,5 @@
 import docx, {Paragraph} from "docx";
-import {resultFilenameTrip, version} from "../app/TechnicalConstants.js";
+import {version} from "../app/TechnicalConstants.js";
 import {fontType, fontSizeHeading, fontSizeContent} from "../print/FormatConstants.js";
 import fs from "fs";
 import {Step, Trip} from "./Trip.js";
@@ -37,7 +37,8 @@ export class TripParser {
             }]
         });
 
-        printDocumentToResultDir(doc, resultFilenameTrip);
+        const resultFilename = "MyTrip_" + tripData.name + ".docx";
+        printDocumentToResultDir(doc, resultFilename);
     }
 
     private buildTripSectionForStep(step: Step): docx.Paragraph {
