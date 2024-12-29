@@ -49,9 +49,6 @@ export class TripParser {
         paragraph.addChildElement(this.getLocationRun(step));
         this.addSpacing(paragraph, 1);
 
-        // paragraph.addChildElement(this.getWeatherRun(step));
-        // this.addSpacing(paragraph, 2);
-
         paragraph.addChildElement(this.getDescriptionRun(step));
         this.addSpacing(paragraph, 2);
         return paragraph;
