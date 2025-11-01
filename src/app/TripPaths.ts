@@ -20,3 +20,6 @@ export const tripLaMeuseAVelo: string = path.resolve(externalFileDir +
 // Trip Coast to Coast
 export const tripCoastToCoast: string = path.resolve(externalFileDir +
     "/trip/coast-to-coast_11586921/trip.json");
+
+export const tripAlaska: string = path.resolve(externalFileDir +
+    "/trip/im-westen-viel-neues-radreise-durch-kanada-ala_18159913/trip.json");

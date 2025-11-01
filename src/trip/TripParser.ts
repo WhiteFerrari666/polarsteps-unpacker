@@ -4,10 +4,10 @@ import {fontType, fontSizeHeading, fontSizeContent} from "../print/FormatConstan
 import fs from "fs";
 import {Step, Trip} from "./Trip.js";
 import {printDocumentToResultDir} from "../print/DocPrinter.js";
-import {tripCoastToCoast} from "../app/TripPaths.js";
+import {tripAlaska} from "../app/TripPaths.js";
 
 // Welcher Trip soll gedruckt werden? (Oben aus TripPaths.ts importieren)
-const tripToPrintJsonPath = tripCoastToCoast;
+const tripToPrintJsonPath = tripAlaska;
 
 export class TripParser {
 
